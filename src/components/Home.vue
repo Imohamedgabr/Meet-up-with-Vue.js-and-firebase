@@ -23,6 +23,7 @@
 				    <v-carousel-item 
 				    v-for="meetup in meetups" :src="meetup.imageUrl" 
 				    :key="meetup.id"
+				    :to="'/meetups/'+ meetup.id"
 				    @click="onLoadMeetup(meetup.id)">
 				    	<div class="title">{{meetup.title }} </div>
 				    </v-carousel-item>
@@ -40,13 +41,9 @@
 
 <script>
 	export default{
-		data(){
-			return {
-				meetups: [
-				{imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/52/New_York_Midtown_Skyline_at_night_-_Jan_2006_edit1.jpg' , id: 'afdawdag213', title:'Meetup in New York'},
-				{imageUrl: 'http://www.bestupforyou.com/wp-content/uploads/2014/10/How-to-plan-a-trip-to-Paris.jpg' , id: '3dgf4344', title:'Meetup in Paris'},
-				{imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/52/New_York_Midtown_Skyline_at_night_-_Jan_2006_edit1.jpg' , id: '32434gff13', title:'Meetup in New York'}
-				]
+		computed: {
+			meetups(){
+				return this.$store.getters.featuredMeetups
 			}
 		},
 		methods: {
