@@ -13,8 +13,8 @@
 			                    >
 			         </v-card-media>
 			    <v-card-text>
-			    	<div class="info--text">{{meetup.date}} - where it takes place</div>
-			    	<div> lorem ipsum bindle mindle sweet , lorem ipsum bindle mindle sweet, lorem ipsum bindle mindle sweet, lorem ipsum bindle mindle sweet</div>
+			    	<div class="info--text">{{meetup.date | date}} - {{ meetup.location }} </div>
+			    	<div> {{ meetup.description }} </div>
 			    </v-card-text>
 			    <v-card-actions>
 			    	<v-spacer></v-spacer>
